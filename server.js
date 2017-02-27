@@ -109,6 +109,23 @@ Utente.findOne({
 		throw err;
 	});
 
+//DELETE
+Utente.findOne({
+		nome: "Paolo"
+
+	})
+	.exec()
+	.then(function (utente) {
+		console.log("\nUTENTE DI NOME PAOLO");
+		return utente.remove();
+
+	})
+	.then(function () {
+		console.log("\nUtente eliminato");
+	})
+	.catch(function (err) {
+		throw err;
+	});
 
 //START SERVER
 app.listen(3000, function () {
