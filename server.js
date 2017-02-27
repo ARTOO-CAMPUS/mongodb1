@@ -89,6 +89,26 @@ Utente.find({
 		throw err;
 	});
 
+//UPDATE
+//TROVO L'UTENTE CHE SI CHIAMA PAOLO E GLI CAMBIO L'ETA'
+Utente.findOne({
+		nome: "Paolo"
+
+	})
+	.exec()
+	.then(function (utente) {
+		console.log("\nUTENTE DI NOME PAOLO");
+		utente.eta = 35;
+		return utente.save();
+
+	})
+	.then(function () {
+		console.log("\nUtente aggioranto");
+	})
+	.catch(function (err) {
+		throw err;
+	});
+
 
 //START SERVER
 app.listen(3000, function () {
