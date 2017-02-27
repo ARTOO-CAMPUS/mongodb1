@@ -34,9 +34,10 @@ schemaUtente.methods.nomecompleto = function () {
 	return this.nome + ' ' + this.cognome;
 };
 
-//NOUVO MODELLO
+//NUOVO MODELLO
 var Utente = mongoose.model('Utente', schemaUtente);
 
+//CREATE
 //CREAZIONE UTENTE
 var minorenne = new Utente({
 	nome: "Paolo",
@@ -50,6 +51,7 @@ minorenne.save().then(function () {
 	throw err;
 });
 
+//READ
 //TUTTI GLI UTENTI
 Utente.find()
 	.exec()
